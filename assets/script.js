@@ -1,4 +1,4 @@
-var wordBlank = document.querySelector(".word-blanks");
+var questionCard = document.querySelector(".questionCard");
 var button1 = document.getElementById("button1");
 var button2 = document.getElementById("button2");
 var button3 = document.getElementById("button3");
@@ -8,6 +8,8 @@ var score = document.querySelector(".score");
 var leaderboard = document.querySelector(".leaderboard");
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
+var cardTimer = document.querySelector(".timer");
+var questionguess = document.querySelector(".question-guess");
 
 var chosenQuestion = "";
 var chosenAnswer = "";
@@ -36,17 +38,22 @@ function startGame() {
   timerCount = 15;
   // Prevents start button from being clicked when round is in progress
   startButton.disabled = true;
-  renderQuestion()
-  startTimer()
+  renderQuestion();
+  startTimer();
+  startButton.remove();
+  
 }
 
 
 // The loseGame function is called when timer reaches 0
 function loseGame() {
+    
     setLeaderboard();
-    wordBlank.textContent = "GAME OVER";
-    loseCounter++
+    cardTimer.style.display = "none";
+    questionguess.style.display = "none";
+    
     startButton.disabled = false;
+
 }
 
 // The setTimer function starts and stops the timer and triggers winGame() and loseGame()
@@ -98,7 +105,7 @@ function renderQuestion() {
         }
     }
 
-    wordBlank.textContent = chosenQuestion;
+    questionCard.textContent = chosenQuestion;
 
 }
 

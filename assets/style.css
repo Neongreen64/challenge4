@@ -43,8 +43,9 @@
   }
   
   header {
+    display: inline-block;
     padding: 40px;
-    text-align: center;
+   
     background: #133d1d;
     color: #fff;
     border-bottom:30px #879274;
@@ -64,7 +65,7 @@
     border-radius: 8px;
   }
   
-  .word-guess {
+  .question-guess {
     width: 55vw;
     height: 400px;
   }
@@ -84,9 +85,7 @@
     padding: 20px;
   }
   
-  .word-blanks {
-    
-  }
+
   
   .large-font {
     font-size: 3.5em;
@@ -94,6 +93,7 @@
   }
   
   .timer {
+    display: block;
     height: 240px;
     padding: 10px;
     background: #133d1d;
@@ -102,7 +102,7 @@
   }
   
   .timer-text {
-    padding: 55px;
+   
   }
   
   @media screen and (max-width: 1183px) {
@@ -110,7 +110,7 @@
       flex-direction: column;
     }
   
-    .word-guess,
+    .question-guess,
     .results {
       width: 90vw;
     }
